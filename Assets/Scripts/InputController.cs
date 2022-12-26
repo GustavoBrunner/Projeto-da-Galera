@@ -16,6 +16,7 @@ public class InputController : MonoBehaviour
     public int menuButton;
     public int nextAttack;
     public int previousAttack;
+    public int actionButton;
     public List<int> keyList = new List<int>();
 
     private void Awake()
@@ -31,6 +32,7 @@ public class InputController : MonoBehaviour
         pauseButton = (int)KeyCode.P;
         invetoryButton = (int)KeyCode.I;
         menuButton = (int)KeyCode.Escape;
+        actionButton = (int)KeyCode.E;
         
 
         keyList.Add(nextAttack);
@@ -44,6 +46,7 @@ public class InputController : MonoBehaviour
         InputState.invetoryButton = false;
         InputState.pauseButton = false;
         InputState.reloadButton = false;
+        InputState.actionButton = false;
 
         if(Input.GetMouseButtonDown(fireButton))
         {
@@ -95,7 +98,14 @@ public class InputController : MonoBehaviour
             InputState.invetoryButton = false;
         }
 
-
+        if(Input.GetKeyDown((KeyCode)actionButton))
+        {
+            InputState.actionButton = true;
+        }
+        if(Input.GetKeyUp((KeyCode)actionButton))
+        {
+            InputState.actionButton = false;
+        }
 
 
 

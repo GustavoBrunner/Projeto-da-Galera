@@ -10,19 +10,23 @@ public class GameController : MonoBehaviour
     {
         ic = FindObjectOfType<InputController>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+
+        ButtonActions.OnLoadButton += LoadGame;
+        ButtonActions.OnSaveButton += SaveGame; //linka o evento com a função de salvar o jogo
     }
 
     // Update is called once per frame
-    void Update()
+       
+
+    private void SaveGame()
     {
-        if(Input.GetKeyDown((KeyCode)ic.menuButton))
-            {
-                SaveSystem.SavePlayer(player);
-            }
-            if(Input.GetKeyDown((KeyCode)ic.reloadButton))
-            {
-                Player_base data =  SaveSystem.LoadPlayer();
-                player.GetData(data);
-            }   
-    }    
+        //usa a classe SaveSystem e o DTO do player para armazenar as informações
+        SaveSystem.SavePlayer(player);
+    }
+    private void LoadGame()
+    {
+    
+        Player_base data = SaveSystem.LoadPlayer();
+        player.GetData(data);
+    }
 }

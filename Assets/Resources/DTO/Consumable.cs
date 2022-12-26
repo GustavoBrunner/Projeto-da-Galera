@@ -1,18 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class Consumable : MonoBehaviour
+namespace DTO
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    public class Consumable 
+    {   
+            
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

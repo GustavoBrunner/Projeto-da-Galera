@@ -8,6 +8,12 @@ TagManager:
   - xpHud
   - levelHud
   - staminabar
+  - InteractionButton
+  - Interactable
+  - Diary
+  - UiController
+  - UiController
+  - MainMenu
   layers:
   - Default
   - TransparentFX
