@@ -1,5 +1,5 @@
-
-
+using UnityEngine;
+[CreateAssetMenu(fileName = "ItemBaseDTO", menuName = "Resources/DTO/ItemDTO")]
 public class itens_base
 {
     protected int id;

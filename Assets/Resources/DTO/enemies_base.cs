@@ -1,13 +1,15 @@
-
-public class enemies_base 
+namespace DTO
 {
-    private string name;
-    private int id;
-    private float speed;
-    private float[] position = new float[3];
-    private int damage;
-    private int level;
-    
-    
 
+    public class enemies_base 
+    {
+        public string name;
+        public int id;
+        public float speed;
+        public float[] position = new float[3];
+        public int damage;
+        public int treasure;
+        
+
+    }
 }

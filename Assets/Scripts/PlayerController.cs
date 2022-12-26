@@ -10,7 +10,7 @@ using UnityEngine;
         public int armor { get ; protected set; }
         public int stamina { get; protected set; } = maxStamina;
             
-
+        private Collider2D clldr;
         public int hp = maxHp;
         public int _hp 
         {
@@ -105,7 +105,8 @@ using UnityEngine;
                 float xpController = 5000;
                 levelsXp[0] = 1000;
                 levelsXp[i] += levelsXp[i-1] + xpController;
-                Debug.Log(levelsXp[i]);
+                //Debug.Log(levelsXp[i]);
+                clldr = GetComponent<BoxCollider2D>();
             }
 
         }
@@ -116,6 +117,7 @@ using UnityEngine;
             TakeDamage(20);
             LevelUp();
             Dash();
+            OnItemCollected();
 
             if(Input.GetKeyDown(KeyCode.Space))
             {
@@ -204,5 +206,19 @@ using UnityEngine;
                 return;
             }
             
+        }
+
+        
+
+        public void OnItemCollected()
+        {
+            Interactable.ItemInteracted += GetItem;
+        }
+        void GetItem()
+        {
+            if(InputState.actionButton)
+            {
+                Debug.Log("Item Coletado");
+            }
         }
     }

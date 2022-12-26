@@ -12,6 +12,7 @@ public static class InputState
     public static bool consumableButton;
     public static bool nextAttack;
     public static bool previousAttack;
+    public static bool actionButton;
 
 
 }
